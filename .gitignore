@@ -1,0 +1,9 @@
+# Compiled Object files
+*.o
+
+# Executables
+*.exe
+*.out
+*.app
+
+.vscode/c_cpp_properties.json
