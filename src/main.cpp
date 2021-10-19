@@ -11,7 +11,7 @@ int main(int argc, char* args[]) {
   if (!(IMG_Init(IMG_INIT_PNG)))
     std::cout << "IMG_Init HAS FAILED. ERROR: " << SDL_GetError() << "\n";
 
-  RenderWindow window("Gamer", 1280, 720);
+  RenderWindow window("Game", 600, 400);
 
   bool gameRunning = true;
 
