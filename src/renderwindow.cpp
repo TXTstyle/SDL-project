@@ -4,6 +4,7 @@
 
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
+#include "Math.hpp"
 
 RenderWindow::RenderWindow(const char* p_title, int p_w, int p_h)
     :window(NULL), renderer(NULL)
@@ -45,8 +46,9 @@ void RenderWindow::render(Entity& p_entity) {
     SDL_Rect dst;
     dst.x = p_entity.getPos().x * 2;
     dst.y = p_entity.getPos().y * 2;
-    dst.w = p_entity.getCurrentFrame().w * 2;
-    dst.h = p_entity.getCurrentFrame().h * 2;
+    dst.w = p_entity.getScl().x * 2;
+    dst.h = p_entity.getScl().y * 2;
+    //p_entity.getScl().print();
 
     SDL_RenderCopy(renderer, p_entity.getTex(), &src, &dst);
 }
