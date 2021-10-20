@@ -30,3 +30,18 @@ struct Vector2i {
 
     int x, y;
 };
+
+struct playerVector {
+    playerVector()
+    :x(0), y(0)
+    {}
+    playerVector(int p_x, int p_y)
+    :x(p_x), y(p_y)
+    {}
+
+    void print() {
+        std::cout << x << ", " << y << "\n";
+    }
+
+    int x, y;
+};

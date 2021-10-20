@@ -12,10 +12,6 @@ Entity::Entity(Vector2f p_pos, Vector2i p_scl, SDL_Texture* p_tex, Vector2i p_sc
     currentFrame.h = p_sclS.y;
 }
 
-SDL_Texture* Entity::getTex() {
-    return tex;
-}
-
 SDL_Rect Entity::getCurrentFrame() {
     return currentFrame;
 }

@@ -13,7 +13,9 @@ public:
     Vector2i& getScl() {
         return scl;
     }
-    SDL_Texture* getTex();
+    SDL_Texture* getTex() {
+        return tex;
+    }
     SDL_Rect getCurrentFrame();
 private:
     Vector2f pos;
