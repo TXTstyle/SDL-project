@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "RenderWindow.hpp"
+#include "Entity.hpp"
 
 int main(int argc, char* args[]) {
   if (SDL_Init(SDL_INIT_VIDEO) > 0)
@@ -12,6 +13,11 @@ int main(int argc, char* args[]) {
     std::cout << "IMG_Init HAS FAILED. ERROR: " << SDL_GetError() << "\n";
 
   RenderWindow window("Game", 600, 400);
+
+  SDL_Texture* grassTexture = window.loadTexture("./res/gfx/Grass_1.png");
+
+  Entity entities[3] = {Entity(0,310, grassTexture), Entity(32,310, grassTexture), Entity(64,310, grassTexture)};
+  int entitiesLen = sizeof(entities) / sizeof(entities[0]);
 
   bool gameRunning = true;
 
@@ -25,6 +31,15 @@ int main(int argc, char* args[]) {
         gameRunning = false;
     }
     
+    window.clear();
+    
+    for (int i = 0; i < entitiesLen; i++)
+    {
+      window.render(entities[i]);
+    }
+    
+
+    window.display();
   }
   
   
